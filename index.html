@@ -12,31 +12,113 @@
         <nav>
             <h1>COBOL Basics</h1>
             <ul>
-                <li><a href="#">Introduction</a></li>
-                <li><a href="#">Basic COBOL Syntax</a></li>
-                <li><a href="#">COBOL Divisions</a></li>
-                <li><a href="#">COBOL Variables</a></li>
+                <li><a href="#intro">Introduction</a></li>
+                <li><a href="#basic">Basic COBOL Syntax</a></li>
+                <li><a href="#divisions">COBOL Divisions</a></li>
+                <li><a href="#variables">COBOL Variables</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <section>
+        <section id="intro">
             <h2>Introduction</h2>
-            <h3>What is COBOL?</h3>
             <p>COBOL is an acronym for Common Business-Oriented Language. It was designed for data-processing with accuracy and efficiency in mind, as well as for ease in reading and writing. It was invented in 1959 by a group of programmers who wanted a programming language that could run on the computers made by different manufacturers. It was partially based on a programming language called FLOW-MATIC that was developed by Grace Hopper.</p>
             <p>COBOL's ability to process large amounts of data accurately and efficiently has led to its continued use into the present day. Banks still use it, and in any transaction made with a credit or debit card, there's a high chance that COBOL was involved in the background.</p>
+            <p>COBOL written for the IBM mainframe operating system called z/os is described as "enterprise COBOL". The COBOL code you see in the IBM course "Learning COBOL Programming with VSCODE" is enterprise COBOL. It's compiled and executed differently than COBOL written for other platforms. But it still follows COBOL standardization.</p>
         </section>
-        <section>
+        <section id="basic">
             <h2>Basic COBOL Syntax</h2>
-            <p></p>
+            <h3>Columns</h3>
+            <p>COBOL is column-dependent. It looks for certain things to be in certain positions. It looks in 5 primary areas of a 72-character line:</p>
+            <ol>
+                <li>
+                  <h4>Sequence Number Area: columns 1-6</h4>
+                  <p>Sometimes blank, sometimes used to provide context to a series of statements</p>
+                </li>
+                <li>
+                    <h4>Indicator Area: column 7</h4>
+                    <p>A multi-purpose area. An asterisk denotes a comment. A dash or hyphen denotes the continuation of a previous line.A "D" is used for a debugging line. And a slash is used for source code listing.</p>
+                </li>
+                <li>
+                    <h4>A Area: columns 8-11</h4>
+                    <p>Here you'll find elements that give COBOL programs structure, e.g. divisions, sections, paragraphs, etc.</p>
+                </li>
+                <li>
+                    <h4>B Area: columns 12-72</h4>
+                    <p>This is where statements, sentences and clauses go, i.e. the things that make a COBOL program "do things".</p>
+                </li>
+                <li>
+                    <h4>Identification Area: 73-80</h4>
+                    <p>The compiler ignores this part. It's an area that the programmer can use for any purpose. It's often left blank.</p>
+                </li>
+            </ol>
+            <h3>Reserved Words</h3>
+            <p>There are also certain words in COBOL that are reserved, meaning that they serve a specific purpose programmatically and you should be careful not to use them. Examples include:</p>
+            <ul>
+                <li>READY</li>
+                <li>UNTIL</li>
+                <li>SET</li>
+                <li>IF</li>
+                <li>DATA</li>
+                <li>FILE</li>
+                <li>END</li>
+            </ul>
+            <p>An expanded list of reserved words can be found <a href="https://www.ibm.com/docs/en/cobol-zos/6.3?topic=appendixes-reserved-words" target="_blank">here</a></p>
         </section>
-        <section>
+        <section id="division">
             <h2>COBOL Divisions</h2>
-            <p></p>
+            <p>COBOL has a hierarchical structure:</p>
+            <ol>
+                <li>
+                    <h3>DIVISIONS</h3>
+                    <p>There are 4 COBOL DIVISIONS:</p>    
+                    <ol>
+                        <li>
+                            <h4>Identification DIVISION</h4>
+                            <p>Where you put the name of your program, who the programmer was, when it was written and how it should be used.</p>
+                        </li>
+                        <li>
+                            <h4>Environment DIVISION</h4>
+                            <p>This could mean two things: how you set the kind of computer environment that runs the program, hwo you set the mapping between the files in your program and the files in the dataset.</p>
+                        </li>
+                        <li>
+                            <h4>Data DIVISION</h4>
+                            <p>Sets up all the data that would be used in your program, e.g. files, data from other programs, what kind of storage or data would be used while the program is run, and what the ouput would be when the program has finished running.</p>
+                        </li>
+                        <li>
+                            <h4>Procedure DIVISION</h4>
+                            <p>This is where SECTIONS and PARAGRAPHS go. The code that "does things" goes in the procedure DIVISION.</p>
+                        </li>
+                    </ol>
+                </li>
+                <li>
+                    <h3>SECTIONS</h3>
+                    <p>PARAGRAPHS go into SECTIONS (duh). There are all sots of them and their names can be user-define or pre-defined. They can be used to structure your program, or to make sure certain information is where it needs to be.</p>    
+                </li>
+                <li>
+                    <h3>PARAGRAPHS</h3>
+                    <p>PARAGRAPHS contain SENTENCES (also duh). PARAGRAPHS are defined by the user to give their program structure. PARAGRAPHS generally represent a specific action made up of smaller steps. If the action is something that might be called several times in your program, it would go inside a paragraph. You would then call that PARAGRAPH elsewhere in the program</p>    
+                </li>
+                <li>
+                    <h3>SENTENCES</h3>
+                    <p>SENTENCES are made up of STATEMENTS (duh again). A COBOL SENTENCE can be made up of 1 or more STATEMENTS, serving as a logical container. A period at the end of a SENTENCE is an implicit scope terminator, and declares as finished all previous STATEMENTS that have not yet ended.</p> 
+                    <p>Alternatively, you can also end a SENTENCE or STATEMENT with an explicit scope terminator, e.g. ending an IF STATEMENT with an END-IF.</p>   
+                </li>
+                <li>
+                    <h3>STATEMENTS</h3>
+                    <p>A single directive that usually begins with one of the reserved words previously mentioned.</p>    
+                </li>
+            </ol>
         </section>
-        <section>
+        <section id="variables">
             <h2>COBOL Variables</h2>
-            <p></p>
+            <p>It's common for a programming language to have variables and that is also the case with COBOL. A variable is a name defined by the programmer to represent a value. It's referred to as a dataname, and can be anything as long as it's:</p>
+            <ul>
+                <li>30 characters or less</li>
+                <li>doesn't contain any spaces</li>
+                <li>is composed of only letters, numbers or hashes</li>
+                <li>and isn't a reserved word</li>
+            </ul>
         </section>
     </main>
 </body>

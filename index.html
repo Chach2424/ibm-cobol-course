@@ -112,13 +112,35 @@
         </section>
         <section id="variables">
             <h2>COBOL Variables</h2>
-            <p>It's common for a programming language to have variables and that is also the case with COBOL. A variable is a name defined by the programmer to represent a value. It's referred to as a dataname, and can be anything as long as it's:</p>
+            <p>It's common for a programming language to have variables and that is also the case with COBOL. A variable is a name defined by the programmer to represent a value. It's referred to as a dataname, and can be anything as long as it:</p>
             <ul>
-                <li>30 characters or less</li>
+                <li>has 30 characters or less</li>
                 <li>doesn't contain any spaces</li>
                 <li>is composed of only letters, numbers or hashes</li>
-                <li>and isn't a reserved word</li>
+                <li>isn't a reserved word</li>
             </ul>
+            <p>When we declare variables in COBOL, we have to be explicit in what type of variable it's going to be:</p>
+            <ul>
+                <li>numeric</li>
+                <li>alphabetic</li>
+                <li>both</li>
+            </ul>
+            <h3>Numeric Variables</h3>
+            <p>We also specify how many of those numbers and/or letters we'll be using. We set the length and data type do in the picture clause, or pic. For example, PIC 9 would be a single numeric value where the length is one. If we need more than one length, we specify it with a parenthesis. For example, PIC 9(5) would be a numeric value with 4 digits, which would be an appropriate variable to store a year.</p>
+            <h3>Alphabetic Variables</h3>
+            <p>Similarly, PIC A would be an alphabetic variable with one character. PIC X(8) would be an alphabetic variable with 8 characters, which would be appropriate for a car license plate number</p>
+            <hr>
+            <hr>
+            <p>There are many other types of PIC clauses. For now let's just focus on the three we've covered. We use picture clauses to represent symbols that appear in the value. For example, PIC 9(4)V99 would be a numeric variable with 4 digits, then a decimal point, and then two more digits. That could perhaps be a frequency like 2458.75GhZ. Something like PIC $9,999V99 is obviously more suitable for sums of money.</p>
+            <p>We usually think of variables as changing values at some point. COBOL has something called literals which contain data that will not change as the program runs. We might use it for unchanging values that we use several times in a program, and would only have to set it once. COBOL has some figurative literals built in. For example:</p>
+            <ul>
+                <li>ZERO / ZEROES</li>
+                <li>SPACE / SPACES</li>
+                <li>LOW-VALUE / HIGH-VALUE</li>
+                <li>NULL / NULLS</li>
+                
+            </ul>
+            
         </section>
     </main>
 </body>

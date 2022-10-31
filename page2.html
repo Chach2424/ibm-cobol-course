@@ -14,7 +14,7 @@
                 <li><a href="#data">Data Division</a></li>
                 <li><a href="#file-handling">File Handling</a></li>
                 <li><a href="#procedure">Procedure Division</a></li>
-                <li><a href="#"></a></li>
+                <li><a href="#program-structure">Program Structure</a></li>
                 <li><a href="#"></a></li>
                 <li><a href="#"></a></li>
                 <li><a href="#"></a></li>
@@ -38,14 +38,20 @@
         <section id="procedure">
             <h2>Procedure Division</h2>
             <p>This is where we open the files, specifically in the OPEN-FILES section. We close files in the CLOSE-STOP section at the end of the program, or when we're done using the file.</p>
-            <p>COBOL is often used to process lots of data. As such, we'd need some kind of for-loop to go through RECORDs. In COBOL, the reserved word for that is PERFORM, and also the combined PERFORM UNTIL.</p>
+            <p>COBOL is often used to process lots of data. As such, we'd need some kind of for-loop to go through RECORDs. In COBOL, the reserved word for that is PERFORM, and also the combined PERFORM UNTIL or PERFORM THRU.</p>
         </section>
-        <section id="">
-            <h2></h2>
-            <p></p>
+        <section id="program-structure">
+            <h2>Program Structure</h2>
+            <p>COBOL is often described as a structured programming language, meaning that it relies on the concept of passing control and following a flow structure as the program executes. The way you write your code spells out how it should be executed. You use the structure of COBOL to make sure your code flows the way it ought to.A lot of the code you write in COBOL needs to be transparent, readable and easily diagnosed.</p>
+            <p>There is some ability to jump around a little bit in the code, but be sure to use that sparingly. Don't make it the backbone of your code. COBOL passes control mainly using the PARAGRAPHS and the PERFORM keyword.</p>
+            <p>A note about GOTO: Don't use it unless you really need to do it and know for sure what it's going to do exactly. In contrast with PERFORM, GOTO will go to where you direct it in the code and start executing from there. Take care using GOTO because you might be losing some of that structure we talked about previously.</p>
         </section>
-        <section id="">
-            <h2></h2>
+        <section id="paragraphs">
+            <h2>Paragraphs</h2>
+            <p>When you begin planning a program, start thinking in paragraphs. Paragraphs are defined in the procedure division and start from column 8. You can name them anything you like other than a reserved keyword. The paragraph can contain one or more sentences, and you terminate the declaration/definition of a paragraph with a period.  </p>
+            <p>Spend some time in the beginning planning the flow and structure of your program, e.g. which part will be handled in which paragraph.This helps with debugging errors and serves as a baseline reference you can check against.</p>
+            <p>If you find yourself repeating the same code, that's probably a good place for to use a paragraph. Put that code into a paragraph, and give it a name. Also spend some time thinking up a good name for paragraphs, ideally names that give you a good a idea of what the paragraph is supposed to be doing. Loops are also something that belongs nicely in PARAGRAPHS. Put them in there using the PERFORM keyword. A nice simple way to set up loops is with the keyword TIMES.</p>
+            <p>A paragraph can come before or after the code that calls it, but you should order your paragraphs in the order that they'd be executed in, or as best as you can try anyway.</p>
             <p></p>
         </section>
         <section id="">

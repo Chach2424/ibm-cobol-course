@@ -4,54 +4,58 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>More COBOL</title>
 </head>
 <body>
     <header>
         <nav>
-            <h1></h1>
+            <h1>More COBOL</h1>
             <ul>
-                <li><a href=""></a></li>
-                <li><a href=""></a></li>
-                <li><a href=""></a></li>
-                <li><a href=""></a></li>
-                <li><a href=""></a></li>
-                <li><a href=""></a></li>
-                <li><a href=""></a></li>
-                <li><a href=""></a></li>
+                <li><a href="#data">Data Division</a></li>
+                <li><a href="#file-handling">File Handling</a></li>
+                <li><a href="#procedure">Procedure Division</a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <section>
+        <section id="data">
+            <h2>Data Division</h2>
+            <p>All of the data we use in our COBOL program gets set up in the DATA DIVISION, and we use a data relationship to add structure to it.</p>
+            <h3>MOVE and COMPUTE</h3>
+            <p>These are two reserved words we use to manipulate the values of variables. MOVE moves data from one place into a variable. COMPUTE is used to do mathematical operations.</p>
+        </section>
+        <section id="file-handling">
+            <h2>File Handling</h2>
+            <p>This would involve the SELECT and ASSIGN clauses in the ENVIRONMENT DIVISION, FD statements in the DATA DIVISION, and in the PROCEDURE DIVISION, we'd be using the OPEN, CLOSE, READ-INTO and WRITE-FROM statements</p>
+            <p>The ENVIRONMENT and DATA divisions are where inputs and outputs are described, which in turn are used in the PROCEDURE DIVISION</p>
+            <p>Since we're working with z/os, the datasets we'll be using will be of the sequential data storage type. A dataset in z/os consists of records. Each record is a line in a dataset, and has a defined length. In COBOL, data can be loaded as a block for efficiency, where a block is a group of records, and put in a buffer.</p>
+        </section>
+        <section id="procedure">
+            <h2>Procedure Division</h2>
+            <p></p>
+        </section>
+        <section id="">
             <h2></h2>
             <p></p>
         </section>
-        <section>
+        <section id="">
             <h2></h2>
             <p></p>
         </section>
-        <section>
+        <section id="">
             <h2></h2>
             <p></p>
         </section>
-        <section>
+        <section id="">
             <h2></h2>
             <p></p>
         </section>
-        <section>
-            <h2></h2>
-            <p></p>
-        </section>
-        <section>
-            <h2></h2>
-            <p></p>
-        </section>
-        <section>
-            <h2></h2>
-            <p></p>
-        </section>
-        <section>
+        <section id="">
             <h2></h2>
             <p></p>
         </section>
